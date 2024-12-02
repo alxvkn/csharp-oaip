@@ -1,6 +1,4 @@
-﻿namespace arrays;
-
-class Program
+﻿class OneDimensional
 {
     static void _1() {
         Console.WriteLine("Задание 1.");
@@ -192,17 +190,67 @@ class Program
         Console.WriteLine();
     }
     
-    static void Main(string[] args)
-    {
-        // _1();
-        // _2();
-        // _3();
-        // _4();
-        // _5();
-        // _6();
-        // _7();
-        // _8();
-        // _9();
+    public static void run() {
+        Console.WriteLine("Одномерные массивы.");
+        _1();
+        _2();
+        _3();
+        _4();
+        _5();
+        _6();
+        _7();
+        _8();
+        _9();
         _10();
+    }
+}
+
+class MultiDimensional {
+    static void _1() {
+        int[,] mat = {
+            { 1, 2, 3, 4 },
+            { 5, 6, -1, 5 },
+            { 10, 15, 8, 90 },
+        };
+
+        for (uint i = 0; i < mat.GetLength(0); i++) {
+            for (uint j = 0; j < mat.GetLength(1); j++) {
+                Console.Write($"{mat[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+
+        for (uint i = 0; i < 3; i++) {
+            int min = mat[i, 0];
+
+            for (uint j = 1; j < 4; j++) {
+                if (mat[i, j] < min) {
+                    min = mat[i, j];
+                }
+            }
+
+            Console.WriteLine($"Минимальный элемент строки {i + 1} = {min}");
+        }
+    }
+
+    // static void _2() {
+    //     int [,] mat = {
+    //         {1,2,3},
+    //         {5,6,7},
+    //         {3,8,4},
+    //     };
+    // }
+
+    public static void run() {
+        Console.WriteLine("Многомерные массивы.");
+
+        _1();
+    }
+}
+
+class Program {
+    public static void Main(string[] args) {
+        // OneDimensional.run();
+        MultiDimensional.run();
     }
 }
