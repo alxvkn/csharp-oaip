@@ -108,14 +108,101 @@ class Program
         Console.WriteLine(sum);
         Console.WriteLine();
     }
+
+    static void _7() {
+        Console.WriteLine("Задание 7.");
+        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 };
+
+        uint count = 0;
+        int sum = 0;
+        foreach (int n in arr) {
+            if (n % 5 == 0 && n % 7 != 0) {
+                sum += n;
+                count++;
+            }
+        }
+
+        Console.WriteLine(count);
+        Console.WriteLine(sum);
+        Console.WriteLine();
+    }
+
+    static void _8() {
+        Console.WriteLine("Задание 8.");
+        double[] arr = { 1, 1.2, 2, -4, 1.9, 0.5, 7, 8, 9, 10, -11, 12, 13, 14, -15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 25 };
+
+        uint n_negative = 0;
+        uint n_in_interval = 0;
+
+        foreach (int n in arr) {
+            if (n < 0) {
+                n_negative++;
+            } else if (n >= 1 && n <= 2) {
+                n_in_interval++;
+            }
+        }
+
+        Console.WriteLine($"Меньше нуля: {n_negative}");
+        Console.WriteLine($"Принадлежат интервалу [1, 2]: {n_in_interval}");
+        Console.WriteLine();
+    }
+
+    static void _9() {
+        Console.WriteLine("Задание 9.");
+
+        int[] arr = {
+            1, 2, 3, 4, 5,
+            1, 2, 3, 4, 5,
+            1, 2, 3, 4, 5,
+            1, 2, 3, 4, 5,
+            1, 2, 3, 4, 5,
+            1, 2, 3, 4, 5,
+            1, 2, 3, 4, 5,
+        };
+
+        int s = 0;
+        int p = 1;
+        foreach (int n in arr) {
+            if (n % 2 == 0) {
+                if (n < 3)
+                    s += n;
+            } else {
+                if (n > 1)
+                    p *= n;
+            }
+        }
+
+        int r = s + p;
+
+        Console.WriteLine(r);
+        Console.WriteLine();
+    }
+
+    static void _10() {
+        Console.WriteLine("Задание 10.");
+
+        uint[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, };
+
+        foreach (uint n in arr) {
+            if (n % 7 == 1 || n % 7 == 2 || n % 7 == 5) {
+                Console.WriteLine(n);
+            }
+        }
+
+        Console.WriteLine();
+    }
     
     static void Main(string[] args)
     {
-        _1();
-        _2();
-        _3();
-        _4();
-        _5();
-        _6();
+        // _1();
+        // _2();
+        // _3();
+        // _4();
+        // _5();
+        // _6();
+        // _7();
+        // _8();
+        // _9();
+        _10();
     }
 }
