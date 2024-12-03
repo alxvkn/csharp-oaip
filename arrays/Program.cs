@@ -207,6 +207,7 @@
 
 class MultiDimensional {
     static void _1() {
+        Console.WriteLine("Задание 1.");
         int[,] mat = {
             { 1, 2, 3, 4 },
             { 5, 6, -1, 5 },
@@ -230,21 +231,236 @@ class MultiDimensional {
             }
 
             Console.WriteLine($"Минимальный элемент строки {i + 1} = {min}");
+            Console.WriteLine();
         }
     }
 
-    // static void _2() {
-    //     int [,] mat = {
-    //         {1,2,3},
-    //         {5,6,7},
-    //         {3,8,4},
-    //     };
-    // }
+    static void _2() {
+        Console.WriteLine("Задание 2.");
+
+        int [,] mat = {
+            {1,2,3},
+            {5,6,7},
+            {3,8,4},
+        };
+
+        for (uint i = 0; i < mat.GetLength(0); i++) {
+            for (uint j = 0; j < mat.GetLength(1); j++) {
+                Console.Write($"{mat[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+
+        int row_2_sum = 0;
+        for (uint j = 0; j < mat.GetLength(1); j++) {
+            row_2_sum += mat[1, j];
+        }
+
+        Console.WriteLine($"Сумма элементов второй строки: {row_2_sum}");
+
+        int col_1_prod = 1;
+        for (uint i = 0; i < mat.GetLength(0); i++) {
+            col_1_prod *= mat[i, 0];
+        }
+        Console.WriteLine($"Произведение элементов первого столбца: {col_1_prod}");
+        Console.WriteLine();
+    }
+
+    static void _3() {
+        Console.WriteLine("Задание 3.");
+
+        double [,] mat = {
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, },
+        };
+
+        for (uint i = 0; i < mat.GetLength(0); i++) {
+            for (uint j = 0; j < mat.GetLength(1); j++) {
+                Console.Write($"{mat[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+
+        double sum = 0;
+        for (uint i = 0, j = 0; i < mat.GetLength(0) && j < mat.GetLength(1); i++, j++) {
+            sum += mat[i, j];
+        }
+
+        if (sum > 10) {
+            for (uint i = 0; i < mat.GetLength(0); i++) {
+                for (uint j = 0; j < mat.GetLength(1); j++) {
+                    mat[i, j] = mat[i, j] + 13.5;
+                }
+            }
+        } else {
+            for (uint i = 0; i < mat.GetLength(0); i++) {
+                for (uint j = 0; j < mat.GetLength(1); j++) {
+                    mat[i, j] = mat[i, j] * 2 - 1.5;
+                }
+            }
+        }
+
+        Console.WriteLine($"S: {sum}");
+        for (uint i = 0; i < mat.GetLength(0); i++) {
+            for (uint j = 0; j < mat.GetLength(1); j++) {
+                Console.Write($"{mat[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+
+        Console.WriteLine();
+    }
+
+    static void _4() {
+        Console.WriteLine("Задание 4.");
+
+        double [,] mat = {
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+        };
+
+        for (uint i = 0; i < mat.GetLength(0); i++) {
+            for (uint j = 0; j < mat.GetLength(1); j++) {
+                Console.Write($"{mat[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+
+        uint line = 0;
+        for (; line < mat.GetLength(0); line++) {
+            if (mat[line, 0] == 1) {
+                break;
+            }
+        }
+
+        if (mat[line, 0] != 1) {
+            Console.WriteLine("Строки нет");
+            return;
+        }
+
+        double sum = 0;
+        for (uint j = 0; j < mat.GetLength(1); j++) {
+            sum += mat[line, j];
+        }
+
+        double avg = sum / mat.GetLength(1);
+
+        Console.WriteLine($"Среднее арифметическое строки номер {line + 1}: {avg}");
+
+        Console.WriteLine();
+    }
+
+    static void _5() {
+        Console.WriteLine("Задание 5.");
+
+        int[,] mat = {
+            { 1, 2, 3, 4, 5, 6, 7, },
+            { 1, 2, 3, 4, 5, 6, 7, },
+            { 1, 2, 3, 4, 5, 6, 7, },
+            { 1, 4, 2, 4, 5, 6, 7, },
+            { 1, 2, 3, 4, 1, 3, 2, },
+            { 1, 2, 3, 4, 5, 6, 7, },
+            { 1, 2, 3, 4, 5, 6, 7, },
+        };
+
+        for (uint i = 0; i < mat.GetLength(0); i++) {
+            for (uint j = 0; j < mat.GetLength(1); j++) {
+                Console.Write($"{mat[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+
+        for (uint j = 0; j < mat.GetLength(1); j++) {
+            int min = mat[0, j];
+
+            for (uint i = 0; i < mat.GetLength(0); i++) {
+                if (mat[i, j] < min) {
+                    min = mat[i, j];
+                }
+            }
+
+            Console.WriteLine($"Наименьший элемент столбца {j + 1}: {min}");
+        }
+
+        Console.WriteLine();
+    }
+
+    static void _6() {
+        Console.WriteLine("Задание 6.");
+
+        int [,] mat = {
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 0, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+            { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, },
+        };
+
+        for (uint i = 0; i < mat.GetLength(0); i++) {
+            for (uint j = 0; j < mat.GetLength(1); j++) {
+                Console.Write($"{mat[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+
+        int min = mat[0, 0];
+        uint row = 0;
+        for (uint i = 0, j = 0; i < mat.GetLength(0) && j < mat.GetLength(1); i++, j++) {
+            if (mat[i, j] < min) {
+                min = mat[i, j];
+                row = i;
+            }
+        }
+        Console.WriteLine($"Минимальный элемент главной диагонали находится на строке {row + 1} и равен {min}");
+        Console.WriteLine("Вся строка: ");
+        for (uint j = 0; j < mat.GetLength(1); j++) {
+            Console.Write($"{mat[row, j]} ");
+        }
+
+        Console.WriteLine();
+    }
+
 
     public static void run() {
         Console.WriteLine("Многомерные массивы.");
 
         _1();
+        _2();
+        _3();
+        _4();
+        _5();
+        _6();
     }
 }
 
